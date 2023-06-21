@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="client-grid"
+          title="Clients"
+          model="com.axelor.cms.db.Client">
+        <field name="firstName" />
+        <field name="lastName" />
+        <field name="age" />
+        <field name="dateOfBirth" />
+        <field name="country" />
+    </grid>
+
+    <form name="client-form"
+          title="Client"
+          model="com.axelor.cms.db.Client">
+        <panel name="overviewPanel" title="Overview">
+            <field name="dateOfBirth" />
+            <field name="firstName" />
+            <field name="lastName" />
+            <field name="age"/>
+            <field name="country"/>
+<!--            <field name="phone">-->
+<!--                <viewer><![CDATA[-->
+<!--        <a href="tel:{{record.phone}}">{{record.phone}}</a>-->
+<!--        ]]></viewer>-->
+<!--            </field>-->
+        </panel>
+        <panel name="aboutMePanel" title="About me">
+            <field name="notes" showTitle="false" colSpan="12"/>
+        </panel>
+    <panel name="sidePanel" sidebar="true">
+      <field name="createdOn"/>
+      <field name="createdBy"/>
+      <field name="updatedOn"/>
+      <field name="updatedBy"/>
+    </panel>
+  </form>
+
+<!--  <form name="address-form-popup"-->
+<!--        title="Address"-->
+<!--        model="com.axelor.contact.db.Address">-->
+<!--    <panel title="Overview">-->
+<!--      <field name="street" />-->
+<!--      <field name="area" />-->
+<!--      <field name="city" />-->
+<!--      <field name="zip" />-->
+<!--      <field name="state" />-->
+<!--      <field name="country" />-->
+<!--    </panel>-->
+<!--  </form>-->
+
+</object-views>

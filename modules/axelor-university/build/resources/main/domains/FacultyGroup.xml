@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  https://axelor.com/xml/ns/domain-models/domain-models_6.0.xsd">
+
+    <module name="university" package="com.axelor.university.db" />
+
+    <entity name="FacultyGroup">
+        <many-to-many name="students" ref="Student" mappedBy="facultyGroups" />
+        <string name="faculty" required="true"/>
+        <integer name="maxStudents" required="true"/>
+        <string name="room" required="true"/>
+        <boolean name="finished" required="true"/>
+        <string name="name" required="true"/>
+    </entity>
+
+</domain-models>

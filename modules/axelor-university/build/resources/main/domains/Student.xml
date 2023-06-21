@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  https://axelor.com/xml/ns/domain-models/domain-models_6.0.xsd">
+
+    <module name="university" package="com.axelor.university.db"/>
+
+    <entity name="Student">
+        <string name="firstName" required="true" />
+        <string name="lastName" required="true" />
+        <string name="email" required="true" unique="true" max="100" />
+        <string name="phone" max="20" massUpdate="true" />
+
+        <date name="dateOfBirth" />
+
+        <many-to-many name="facultyGroups" ref="FacultyGroup"/>
+
+        <one-to-many name="addresses" ref="Address" mappedBy="student" required="true" />
+
+    </entity>
+</domain-models>

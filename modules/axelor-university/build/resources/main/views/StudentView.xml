@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="student-grid"
+          title="Student Grid View"
+          model="com.axelor.university.db.Student">
+        <field name="firstName" />
+        <field name="lastName" />
+        <field name="dateOfBirth" />
+        <field name="addresses" />
+        <field name="facultyGroups" />
+        <field name="email" />
+        <field name="phone" />
+    </grid>
+
+    <form name="student-form"
+          title="Student"
+          model="com.axelor.university.db.Student">
+        <panel name="overviewPanel" title="Overview">
+            <field name="firstName" />
+            <field name="lastName" />
+            <field name="dateOfBirth" />
+            <field name="email"/>
+            <field name="phone"/>
+        </panel>
+        <panel-related name="facultyGroupsPanel"
+                       field="facultyGroups"
+                       form-view="faculty-group-form-popup">
+            <field name="name" />
+            <field name="faculty" />
+            <field name="maxStudents" />
+            <field name="finished" />
+            <field name="room" />
+        </panel-related>
+        <panel-related name="addressesPanel"
+                   field="addresses"
+                   form-view="address-form-popup">
+            <field name="street"/>
+            <field name="area"/>
+            <field name="city"/>
+            <field name="state"/>
+            <field name="zip"/>
+            <field name="country"/>
+        </panel-related>
+        <panel name="sidePanel" sidebar="true">
+            <field name="createdOn"/>
+            <field name="createdBy"/>
+            <field name="updatedOn"/>
+            <field name="updatedBy"/>
+        </panel>
+    </form>
+
+    <form name="address-form-popup"
+            title="Address"
+            model="com.axelor.university.db.Address">
+        <panel title="Overview">
+          <field name="street" />
+          <field name="area" />
+          <field name="city" />
+          <field name="zip" />
+          <field name="state" />
+          <field name="country" />
+        </panel>
+    </form>
+
+</object-views>

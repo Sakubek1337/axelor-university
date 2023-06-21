@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <menuitem name="menu-client-book"
+              title="Address Book" />
+
+    <menuitem name="menu-client-friends"
+              parent="menu-client-book"
+              title="All Clients"
+              action="client.all"/>
+
+    <action-view name="client.all"
+                 title="clients"
+                 model="com.axelor.cms.db.Client">
+        <view type="grid" name="client-grid"/>
+        <view type="form" name="client-form"/>
+    </action-view>
+
+</object-views>
